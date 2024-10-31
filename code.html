@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sports Academy Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: "Poppins", sans-serif;
+        }
+       .header{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(Home.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 150px;
+}
+.nav-link{
+    flex: 1;
+    text-align: right;
+}
+.nav-link ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-link ul li a{
+    color: #fff;
+    text-decoration:none ;
+    font-size: 13px;
+}
+.nav-link ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background:#f44336 ;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-link ul li:hover::after{
+    width: 100%;    
+}
+.text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 62px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+}
+.Sports{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 100px;
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.sportscol{
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+.sportscol img{
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.sportscol:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+.campus{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.campuscol{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.campuscol img{
+    width: 100%;
+    display: block;
+}
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.layer:hover{
+    background:rgba(226, 0, 0, 0.7) ;
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
+.facilities{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.facilitiescol{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.facilitiescol img{
+    width: 100%;
+    border-radius: 10px;
+}
+.facilitiescol p{
+    padding: 0;
+}
+.facilitiescol h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.testimonial{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.testimonialcol{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+.testimonialcol img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+.testimonialcol p{
+    padding: 0;
+}
+.testimonialcol h3{
+    margin-top: 15px;
+    text-align: left;
+}
+.contact{
+    margin: 100px;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(contact.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+.contact h1{
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.icon{
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.btn:hover{
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 0.5s;
+    color: #fff;
+}
+.sub-header{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(cele.jpg);
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+.sub-header h1{
+    margin-top: 20px;
+}
+.aboutus{
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+.aboutcol{
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+.aboutcol img{
+    width: 100%;
+}
+.aboutcol h1{
+    padding-top: 0;
+}
+.aboutcol p{
+    padding: 15px 0 25px;
+}
+.red-btn{
+    border: 1px solid #f44336;
+    background: transparent;
+    color: #f44336;
+}
+.red-btn:hover{
+    color: #fff;
+}
+    </style>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="code.html"><img src="output (1).jpg"</a>
+            <div class="nav-link">
+                <ul>
+                    <li><a href="code.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="sports.html">SPOTS</a></li>
+                    <li><a href="Blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>                  
+                </ul>
+            </div>
+        </nav>
+        <div class="text-box">
+            <h1>The Sports Academy</h1>
+            <p>Where Champions Are Made !</p>
+        </div>
+    </section>
+    <!-------sports------>    
+    <section class="Sports">
+        <h1>Sports we offer</h1>
+        <p>Your Journey to Greatness Starts Here!</p>
+        <div class="row">
+            <div class="sportscol">
+                <h3>Basketball</h3>
+                <img src="bbbbb.jpg">
+                <p>Basketball Program!<br>We offer a comprehensive basketball training experience designed for players of all skill levels. Whether you are just starting out or looking to refine your game, our program focuses on skill development, teamwork, and sportsmanship. Learn from experienced coaches who have played at competitive levels and have a passion for teaching the game.</p>
+            </div>
+            <div class="sportscol">
+                <h3>Swimming</h3>
+                <img src="OIP (2).jpg"><br>
+                <p>Dive Into Our Swimming Program!<br>Learn essential safety skills that promote confidence and security in the water. Our seasonal camps for intensive training and skill enhancement.<br>Competitive Teams: Opportunities for swimmers to compete in local meets and develop their competitive edge.</p>
+            </div>
+            <div class="sportscol">
+                <h3>Football</h3>
+                <img src="R (1).jpg">
+                <p>We cater to players of all ages and skill levels. Our goal is to develop your skills and love for the game in a supportive environment.<BR>Special Programs:<br>Football Camps: Intensive training sessions.<br>Competitive Teams: Opportunities to compete in leagues and tournaments.</p>
+            </div>
+        </div>
+    </section>
+    <!-----campus-->
+    <section class="campus">
+        <h1>Our Campus</h1>
+        <p>We pride ourselves on providing a state-of-the-art environment that nurtures athletic talent and fosters a love for sports. Our campus is designed to inspire athletes to reach their fullest potential, with top-notch facilities and a vibrant community</p>
+        <div class="row">
+            <div class="campuscol">
+                <img src="campus.avif">
+                <div class="layer">
+                    <h3>PUNE</h3>
+                </div>
+            </div>
+            <div class="campuscol">
+                <img src="building.jpg">
+                <div class="layer">
+                    <h3>NEW DELHI</h3>
+                </div>
+            </div>
+            <div class="campuscol">
+                <img src="PONDNEW.webp">
+                <div class="layer">
+                    <h3>PONDICHERRY</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----facilities-->
+    <section class="facilities">
+        <H1>Our Facilities</H1>
+        <p></p>
+        <div class="row">
+            <div class="facilitiescol">
+                <img src="pool.jpg">
+                <h3>Swimming pool</h3>
+                <p>Our pool regularly hosts swim meets and community events, fostering a spirit of competition and camaraderie among athletes.</p>
+            </div>
+            <div class="facilitiescol">
+                <img src="basketbaaaaaa.jpg">
+                <h3>Indoor Basketball Court</h3>
+                <p>Our indoor basketball area is designed to inspire athletes to reach their full potential. With top-notch facilities and a supportive environment, we cater to players of all levels.</p>
+            </div>
+            <div class="facilitiescol">
+                <img src="R.jpg">
+                <h3>Football Ground</h3>
+                <p>A full-sized, professional-grade turf field suitable for both practice and competitive play.</p>
+            </div>
+        </div>
+    </section>
+    <!----testmonial-->
+    <section class="testimonials">
+        <h1>What Our Student Says</h1>       
+        <p></p>
+        <div class="row">
+            <div class="testimonialcol">
+                <img src="userrrrr.jpg">
+                <div>
+                    <P>The coaches are incredibly knowledgeable and provide personalized feedback. They really care about each athlete’s development :)</P>
+                    <h3>Jesica Berley</h3>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="testimonialcol">
+                <img src="schlss.jpg">
+                <div>
+                    <P>The basketball courts have great flooring, and the atmosphere is perfect for practice.</P>
+                    <h3>Dev mishra</h3>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>                   
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-----contact-->
+    <section class="contact">
+        <h1>Enroll For Various Sports<BR> Anywhere From The World</h1>
+        <a href="" class="btn red-btn">CONTACT US</a>
+    </section>
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Our mission is to empower athletes to reach their full potential—both on and off the field. We believe in the transformative power of sports, not only for physical fitness but also for personal growth, teamwork, and resilience</p>
+        <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+            <i class="fab fa-twitter"></i>
+            <p>Made by Shivangi Pundir</p>
+        </div>
+    </section>
+</body>
+</html>
